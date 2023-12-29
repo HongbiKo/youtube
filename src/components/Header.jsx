@@ -8,7 +8,7 @@ export default function Header() {
   const [text, setText] = useState('');
   const navigate = useNavigate();
   const {keyword} = useParams();
-
+  
   const handleChange = (e) => {
     setText(e.target.value);
   }
@@ -17,7 +17,8 @@ export default function Header() {
     navigate(`/videos/${text}`);
   }
 
-  useEffect(()=>{setText(keyword || '')}, [keyword])
+  useEffect(()=>{setText(keyword || '')}, [keyword]);
+  
   return (
     <header className='w-full flex p-4 text-2xl border-b border-zinc-600 mb-4'>
       <Link to='/' className='flex items-center'>
