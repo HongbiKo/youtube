@@ -23,7 +23,9 @@ export default class Youtube {
           channelId,
         },
       })
-      .then((res) => res.data.items);
+      .then((res) =>
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      );
   }
 
   async #searchByKeyword(keyword) {

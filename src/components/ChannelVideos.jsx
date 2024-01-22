@@ -6,7 +6,7 @@ import VideoCard from './VideoCard';
 export default function ChannelVideos( {channelId} ) {
   const { youtube } = useYoutubeApi();
   const { isLoading, error, data: videos} = useQuery({
-    querykey: ['playlist', channelId],
+    queryKey: ['videos', channelId],
     queryFn: () => {
       return youtube.searchByChannelId(channelId);
     }
