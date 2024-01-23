@@ -17,7 +17,7 @@ export default function ChannelVideos( {channelId} ) {
       {error && <p>Something is wrong!</p>}
       {videos && (
         <ul>
-          {videos.map((video)=> <VideoCard key={videos.id} video={video}/>)}
+          {videos.map((video)=> <VideoCard key={videos.id} video={video} type='list'/>)}
         </ul>
       )}
     </>
