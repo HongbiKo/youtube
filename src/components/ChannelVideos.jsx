@@ -9,7 +9,8 @@ export default function ChannelVideos( {channelId} ) {
     queryKey: ['videos', channelId],
     queryFn: () => {
       return youtube.searchByChannelId(channelId);
-    }
+    },
+    staleTime: 1000 * 60 * 5,
   });
   return (
     <>
