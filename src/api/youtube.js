@@ -13,14 +13,14 @@ export default class Youtube {
       .then((res) => res.data.items[0].snippet.thumbnails.default.url);
   }
 
-  async searchByChannelId(channelId) {
+  async searchByChannelId(id) {
     return this.apiClient
       .search({
         params: {
           part: "snippet",
           maxResults: 25,
           type: "video",
-          channelId,
+          channelId: id,
         },
       })
       .then((res) => res.data.items);

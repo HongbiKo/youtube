@@ -3,12 +3,12 @@ import { useYoutubeApi } from '../context/YoutubeApiContext';
 import { useQuery } from '@tanstack/react-query';
 import VideoCard from './VideoCard';
 
-export default function ChannelVideos( {channelId} ) {
+export default function ChannelVideos( {id} ) {
   const { youtube } = useYoutubeApi();
   const { isLoading, error, data: videos} = useQuery({
-    queryKey: ['videos', channelId],
+    queryKey: ['videos', id],
     queryFn: () => {
-      return youtube.searchByChannelId(channelId);
+      return youtube.searchByChannelId(id);
     },
     staleTime: 1000 * 60 * 5,
   });

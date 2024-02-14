@@ -17,7 +17,7 @@ export default function VideoDetail() {
         </div>
       </article>
       <section className='basis-2/6'>
-        <ChannelVideos channelId={channelId}/>
+        <ChannelVideos id={channelId}/>
       </section>
     </section>
   );
